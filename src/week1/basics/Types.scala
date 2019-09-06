@@ -2,6 +2,18 @@ package week1.basics
 
 object Types {
 
+  def intExample(): Unit ={
+    val a: Int = 2147483647
+    println(a)
+    println(a + 1)
+  }
+
+  def doubleExample(): Unit ={
+    val b: Double = 0.1
+    val c: Double = b * 3
+    println(c)
+  }
+
   def main(args: Array[String]): Unit = {
 
     // Declaring variable
@@ -16,6 +28,9 @@ object Types {
 
     // Truncates the decimal. anotherInt == 5
     var anotherInt: Int = aDouble.toInt
+
+    intExample()
+    doubleExample()
   }
 
 }

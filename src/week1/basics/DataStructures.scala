@@ -21,6 +21,11 @@ object DataStructures {
     for (index <- 0 to arr.length) {
       println(index)
     }
+
+    // Iterate over indices - alternate
+    for (index <- arr.indices) {
+      println(index)
+    }
   }
 
   def listExample(): Unit = {

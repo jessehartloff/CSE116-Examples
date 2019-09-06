@@ -1,0 +1,5 @@
+This is text in a file named testFile.txt
+This file is in a directory named data
+You can read this text using Scala by opening the file "data/testFile.txt"
+Note that you program runs from your project folder, not from the src folder
+File paths in your code are relative to the project directory
