@@ -7,7 +7,7 @@ object StackOverflow {
     // Uncomment conditional for fix stack overflow
 //    if(n>0) {
       var result: Int = computeGeometricSum(n - 1)
-      result += +n
+      result += n
       result
 //    }else{
 //      0
