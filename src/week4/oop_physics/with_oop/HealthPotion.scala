@@ -1,11 +1,13 @@
 package week4.oop_physics.with_oop
 
-import week4.oop_physics.PhysicsVector
+import physics.PhysicsVector
+
 
 class HealthPotion(override val location: PhysicsVector,
+                   override val dimensions: PhysicsVector,
                    override val velocity: PhysicsVector,
                    val volume: Int)
-  extends InanimateObject(location, velocity) {
+  extends InanimateObject(location, dimensions, velocity) {
 
 
   override def objectMass(): Double = {

@@ -1,8 +1,10 @@
 package week4.oop_physics.with_oop
 
-import week4.oop_physics.PhysicsVector
+import physics.PhysicsVector
+
 
 class Player(val location: PhysicsVector,
+             val dimensions: PhysicsVector,
              val velocity: PhysicsVector,
              var orientation: PhysicsVector,
              val maxHealth: Int,

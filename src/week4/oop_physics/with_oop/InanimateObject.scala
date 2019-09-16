@@ -1,9 +1,13 @@
 package week4.oop_physics.with_oop
 
-import week4.oop_physics.{PhysicalObject, PhysicsVector}
+import physics.PhysicsVector
+import physics.objects.DynamicObject
 
-abstract class InanimateObject(location: PhysicsVector, velocity: PhysicsVector)
-  extends PhysicalObject(location, velocity) {
+
+abstract class InanimateObject(location: PhysicsVector, dimensions: PhysicsVector, velocity: PhysicsVector)
+  extends DynamicObject(location, dimensions) {
+
+  super.velocity = velocity
 
   def objectMass(): Double
 

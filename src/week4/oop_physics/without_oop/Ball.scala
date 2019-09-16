@@ -1,8 +1,9 @@
 package week4.oop_physics.without_oop
 
-import week4.oop_physics.PhysicsVector
+import physics.PhysicsVector
 
 class Ball(val location: PhysicsVector,
+           val dimensions: PhysicsVector,
            val velocity: PhysicsVector,
            val mass: Double) {
 
