@@ -4,10 +4,10 @@ import physics.PhysicsVector
 import physics.objects.DynamicObject
 
 
-abstract class InanimateObject(location: PhysicsVector, dimensions: PhysicsVector, velocity: PhysicsVector)
+abstract class InanimateObject(location: PhysicsVector, dimensions: PhysicsVector, _velocity: PhysicsVector)
   extends DynamicObject(location, dimensions) {
 
-  super.velocity = velocity
+  this.velocity = _velocity
 
   def objectMass(): Double
 
