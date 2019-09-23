@@ -1,5 +1,7 @@
 package week5.hulk
 
+import week5.hulk.states._
+
 class BruceBanner {
 
   var state: State = new DrBanner(this)
