@@ -4,13 +4,9 @@ import akka.actor._
 import scala.concurrent.duration._
 
 case object Start
-
 case object Update
-
 case object IsDone
-
 case object Done
-
 case object NotDone
 
 
@@ -46,21 +42,20 @@ class Counter(name: String) extends Actor {
 class Supervisor(counters: List[ActorRef]) extends Actor {
 
   var total: Int = counters.size
-  var done: Int = 0
-  var notDone: Int = 0
+  var completed: List[ActorRef] = List()
 
   def receive: Receive = {
     case Update =>
-      this.done = 0
-      this.notDone = 0
       counters.foreach((actor: ActorRef) => actor ! IsDone)
     case Done =>
-      this.done += 1
-      if (this.done == this.total) {
-        println("All counters complete")
+      if(!completed.contains(sender())){
+        completed ::= sender()
+        if (completed.size == this.total) {
+          println("All counters complete")
+        }
       }
     case NotDone =>
-      this.notDone += 1
+      println("A counter is not done yet")
 
   }
 
@@ -84,6 +79,6 @@ object CounterTest {
     two ! Start
     three ! Start
 
-    system.scheduler.schedule(0 milliseconds, 500 milliseconds, supervisor, Update)
+    system.scheduler.schedule(0.milliseconds, 500.milliseconds, supervisor, Update)
   }
 }
