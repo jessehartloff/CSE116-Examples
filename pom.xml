@@ -12,13 +12,6 @@
             <version>3.0.5</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.scalafx/scalafx -->
-        <dependency>
-            <groupId>org.scalafx</groupId>
-            <artifactId>scalafx_2.12</artifactId>
-            <version>11-R16</version>
-        </dependency>
-
         <!-- https://mvnrepository.com/artifact/com.typesafe.play/play-json -->
         <dependency>
             <groupId>com.typesafe.play</groupId>
@@ -33,11 +26,11 @@
             <version>2.4.1</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.typesafe.akka/akka-actor -->
+        <!-- https://mvnrepository.com/artifact/org.scalafx/scalafx -->
         <dependency>
-            <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-actor_2.12</artifactId>
-            <version>2.5.22</version>
+            <groupId>org.scalafx</groupId>
+            <artifactId>scalafx_2.12</artifactId>
+            <version>11-R16</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
@@ -47,10 +40,38 @@
             <version>8.0.15</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.typesafe.akka/akka-actor -->
+        <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-actor_2.12</artifactId>
+            <version>2.5.25</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-testkit_2.12</artifactId>
+            <version>2.5.25</version>
+        </dependency>
+
+
         <dependency>
             <groupId>io.socket</groupId>
             <artifactId>socket.io-client</artifactId>
             <version>1.0.0</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.corundumstudio.socketio</groupId>
+            <artifactId>netty-socketio</artifactId>
+            <version>1.7.12</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.28</version>
         </dependency>
 
     </dependencies>
