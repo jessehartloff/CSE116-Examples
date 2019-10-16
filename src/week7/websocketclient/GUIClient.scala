@@ -12,7 +12,8 @@ import scalafx.scene.layout.VBox
 
 class HandleMessagesFromServer() extends Emitter.Listener {
   override def call(objects: Object*): Unit = {
-    // Use runLater when interacting with the GUI
+    // Use Platform.runLater when interacting with the GUI
+    // This will run your function on the same thread as the GUI allowing access to all GUI elements/variables
     Platform.runLater(() => {
       val message = objects.apply(0).toString
       println(message)
@@ -22,13 +23,12 @@ class HandleMessagesFromServer() extends Emitter.Listener {
 }
 
 
-object Client extends JFXApp {
+object GUIClient extends JFXApp {
 
   var socket: Socket = IO.socket("http://localhost:8080/")
-  socket.on("message_type", new HandleMessagesFromServer)
+  socket.on("ACK", new HandleMessagesFromServer)
 
   socket.connect()
-
 
   var chatInput: TextField = new TextField
 

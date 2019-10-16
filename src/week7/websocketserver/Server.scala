@@ -45,6 +45,7 @@ class DisconnectionListener() extends DisconnectListener {
 class MessageListener() extends DataListener[String] {
   override def onData(socket: SocketIOClient, data: String, ackRequest: AckRequest): Unit = {
     println("received message: " + data + " from " + socket)
+    socket.sendEvent("ACK", "I received your message of " + data)
   }
 }
 
