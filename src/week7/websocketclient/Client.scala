@@ -47,12 +47,19 @@ object Client extends JFXApp {
     }
   }
 
+  val lectureQuestionButton: Button = new Button{
+    text = "Increment"
+    onAction = (event: ActionEvent) => {
+      socket.emit("increment")
+    }
+  }
+
   this.stage = new PrimaryStage {
     title = "CSE Clicker"
     scene = new Scene() {
       content = List(
         new VBox {
-          children = List(chatInput, submitButton, stopButton)
+          children = List(chatInput, submitButton, stopButton, lectureQuestionButton)
         }
       )
     }

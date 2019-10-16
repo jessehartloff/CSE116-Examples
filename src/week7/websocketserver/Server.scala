@@ -22,7 +22,6 @@ class Server() {
 }
 
 object Server {
-
   def main(args: Array[String]): Unit = {
     new Server()
   }
@@ -39,7 +38,6 @@ class ConnectionListener() extends ConnectListener {
 class DisconnectionListener() extends DisconnectListener {
   override def onDisconnect(socket: SocketIOClient): Unit = {
     println("Disconnected: " + socket)
-
   }
 }
 
