@@ -1,10 +1,12 @@
 const socket = io.connect("http://localhost:8080", {transports: ['websocket']});
 
-function setupSocket() {
-    socket.on('ACK', function (event) {
-        document.getElementById("display_message").innerHTML = event;
-    });
-}
+socket.on('ACK', function (event) {
+    document.getElementById("display_message").innerHTML = event;
+});
+
+socket.on('server_stopped', function (event) {
+    document.getElementById("display_message").innerHTML = "The server has stopped";
+});
 
 
 function sendMessage() {

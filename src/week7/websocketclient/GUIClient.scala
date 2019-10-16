@@ -7,7 +7,7 @@ import javafx.event.ActionEvent
 import scalafx.application.JFXApp
 import scalafx.application.JFXApp.PrimaryStage
 import scalafx.scene.Scene
-import scalafx.scene.control.{Button, TextField}
+import scalafx.scene.control.{Button, Label, TextField}
 import scalafx.scene.layout.VBox
 
 class HandleMessagesFromServer() extends Emitter.Listener {
@@ -16,9 +16,16 @@ class HandleMessagesFromServer() extends Emitter.Listener {
     // This will run your function on the same thread as the GUI allowing access to all GUI elements/variables
     Platform.runLater(() => {
       val message = objects.apply(0).toString
-      println(message)
+      GUIClient.textOutput.text.value = message
     })
 
+  }
+}
+class ServerStopped() extends Emitter.Listener {
+  override def call(objects: Object*): Unit = {
+    Platform.runLater(() => {
+      GUIClient.textOutput.text.value = "The server has stopped"
+    })
   }
 }
 
@@ -27,6 +34,7 @@ object GUIClient extends JFXApp {
 
   var socket: Socket = IO.socket("http://localhost:8080/")
   socket.on("ACK", new HandleMessagesFromServer)
+  socket.on("server_stopped", new ServerStopped)
 
   socket.connect()
 
@@ -54,12 +62,14 @@ object GUIClient extends JFXApp {
     }
   }
 
+  val textOutput: Label = new Label
+
   this.stage = new PrimaryStage {
     title = "CSE Clicker"
     scene = new Scene() {
       content = List(
         new VBox {
-          children = List(chatInput, submitButton, stopButton, lectureQuestionButton)
+          children = List(chatInput, submitButton, stopButton, lectureQuestionButton, textOutput)
         }
       )
     }

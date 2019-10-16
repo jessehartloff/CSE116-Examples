@@ -51,9 +51,9 @@ class MessageListener() extends DataListener[String] {
 
 class StopListener(server: Server) extends DataListener[Nothing] {
   override def onData(socket: SocketIOClient, data: Nothing, ackRequest: AckRequest): Unit = {
+    server.server.getBroadcastOperations.sendEvent("server_stopped")
     println("stopping server")
     server.server.stop()
-    println("safe to stop program")
   }
 }
 
