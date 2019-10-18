@@ -1,4 +1,4 @@
-package week7.websocketserver
+package week8.websocketserver
 
 import com.corundumstudio.socketio.listener.{ConnectListener, DataListener, DisconnectListener}
 import com.corundumstudio.socketio.{AckRequest, Configuration, SocketIOClient, SocketIOServer}

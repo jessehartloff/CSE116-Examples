@@ -1,4 +1,4 @@
-package week7.websocketclient
+package week8.websocketclient
 
 import io.socket.client.{IO, Socket}
 import io.socket.emitter.Emitter
