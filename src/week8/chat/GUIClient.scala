@@ -39,8 +39,6 @@ object GUIClient extends JFXApp {
   socket.on("chat_history", new UpdateChat)
   socket.connect()
 
-  socket.emit("register", "GUI User")
-
   var chatInput: TextField = new TextField
 
   val submitButton: Button = new Button{

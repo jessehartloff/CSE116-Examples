@@ -19,7 +19,6 @@ function register() {
     socket.emit("register", username);
     document.getElementById("username_div").innerHTML = "";
     registered = true;
-
 }
 
 function sendMessage() {
