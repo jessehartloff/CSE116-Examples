@@ -4,6 +4,7 @@ socket.on('gameState', function (event) {
     update(event);
 });
 
+
 var canvas = document.getElementById("canvas");
 var context = canvas.getContext("2d");
 context.globalCompositeOperation = 'source-over';
@@ -16,6 +17,7 @@ canvas.setAttribute("width", width.toString() + "px");
 
 
 function update(event) {
+    console.log(event);
     const gameState = JSON.parse(event);
 
     context.clearRect(0, 0, width, height);
@@ -32,3 +34,4 @@ function placeSquare(x, y, color, size) {
     context.strokeStyle = 'black';
     context.strokeRect(x , y , size, size);
 }
+
