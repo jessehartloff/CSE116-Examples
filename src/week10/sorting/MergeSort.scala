@@ -120,7 +120,7 @@ object MergeSort {
   }
 
   def main(args: Array[String]): Unit = {
-    largeExample(2000000)
+    largeExample(2000)
   }
 
 }

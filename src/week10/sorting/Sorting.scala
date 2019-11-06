@@ -23,7 +23,8 @@ object Sorting {
   def sortWithComparator(): Unit = {
     val numbers = List(5, -23, -8, 7, -4, 10)
     // sort by a comparator function/method. This function sorts in decreasing order
-    val numbersSorted = numbers.sortWith((a: Int, b: Int) => a > b)
+    val comparator: (Int, Int) => Boolean = (a: Int, b: Int) => a > b
+    val numbersSorted = numbers.sortWith(comparator)
     // can be shortened to - numbers.sortWith(_ > _)
     println(numbersSorted)
   }
