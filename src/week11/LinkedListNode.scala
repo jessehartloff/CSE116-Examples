@@ -84,18 +84,28 @@ class LinkedListNode[A](var value: A, var next: LinkedListNode[A]) {
   /**
     * returns the head of a new linked list containing f(element) for each element in the original list
     */
-  def map(f: A => A): LinkedListNode[A] = {
+  def map[B](f: A => B): LinkedListNode[B] = {
     val newValue = f(this.value)
     if (this.next == null) {
-      new LinkedListNode[A](newValue, null)
+      new LinkedListNode[B](newValue, null)
     } else {
-      new LinkedListNode[A](newValue, this.next.map(f))
+      new LinkedListNode[B](newValue, this.next.map(f))
+    }
+  }
+
+  /**
+    * calls the provided function on every element in the list
+    */
+  def foreach(f: A => Unit): Unit = {
+    f(this.value)
+    if(this.next != null) {
+      this.next.foreach(f)
     }
   }
 
 
-
   override def toString: String = {
+    List()
     if (this.next == null) {
       this.value.toString
     }else {
