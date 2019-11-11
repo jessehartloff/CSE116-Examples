@@ -33,7 +33,6 @@ object ExpressionTree {
       "-" -> sub
     )
 
-
     // infix: (12-4)-(8+9/3)
     val root: BinaryTreeNode[String] = new BinaryTreeNode[String]("-", null, null)
 
@@ -52,8 +51,14 @@ object ExpressionTree {
     fullyParenthesizedInOrderTraversal(root, print)
 
 
-//    println("\n\nPostfix Notation:")
-//    postOrderTraversal(root, (token: String) => print(token + " "))
+    println("\n\nPostfix Notation:")
+    BinaryTreeTraversals.postOrderTraversal(root, (token: String) => print(token + " "))
+  }
+
+
+  def evaluateTree(node: BinaryTreeNode[String]) : Double = {
+
+    0.0
   }
 
 }
