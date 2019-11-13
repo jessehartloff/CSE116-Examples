@@ -44,4 +44,9 @@ class BinarySearchTree[A](comparator: (A, A) => Boolean) {
     }
   }
 
+
+  def toList: List[A] = {
+    List()
+  }
+
 }
