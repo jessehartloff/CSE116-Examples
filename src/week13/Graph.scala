@@ -16,9 +16,23 @@ class Graph[A] {
     adjacencyList += index2 -> (index1 :: adjacencyList(index2))
   }
 
-  def areConnected(index1: Int, index2: Int): Boolean = {
-    // TODO: Does there exist a path between index1 and index2 in this graph?
-    false
+  def connected(index1: Int, index2: Int): Boolean = {
+    adjacencyList(index1).contains(index2)
+  }
+
+  def isPath(path: List[Int]): Boolean = {
+    // initialize prev to an invalid node id
+    var prev = nodes.keys.min - 1
+    var valid = true
+    for (index <- path) {
+      if (prev != nodes.keys.min - 1) {
+        if (!connected(prev, index)) {
+          valid = false
+        }
+      }
+      prev = index
+    }
+    valid
   }
 
   def distance(index1: Int, index2: Int): Int = {

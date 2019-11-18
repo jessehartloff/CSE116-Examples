@@ -40,4 +40,5 @@ object GraphExample {
     BFS.bfs(graph, 0)
   }
 
+
 }
