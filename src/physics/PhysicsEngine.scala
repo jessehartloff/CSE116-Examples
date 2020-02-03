@@ -7,7 +7,7 @@ package physics
 object PhysicsEngine {
 
 
-  // No solutions yet
+  // No solutions
 
 
   def updateWorld(world: World, deltaTime: Double): Unit = {
