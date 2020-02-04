@@ -18,7 +18,7 @@ object DataStructures {
     }
 
     // Iterate over indices
-    for (index <- 0 to arr.length) {
+    for (index <- 0 to (arr.length-1)) {
       println(index)
     }
 
