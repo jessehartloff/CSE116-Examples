@@ -3,7 +3,7 @@ package week2.objects
 object ItemMain {
 
   def printPrice(item: Item): Unit = {
-    println("Current price of "+ item.description +" is: $" + item.price)
+    println("Current price of " + item.description + " is: $" + item.price)
   }
 
   def main(args: Array[String]): Unit = {
@@ -23,6 +23,10 @@ object ItemMain {
     milk.price = 1.5
 
     printPrice(milk)
+    printPrice(cereal)
+
+    println(cereal.timesPurchased)
+    println(milk.timesPurchased)
   }
 
 }

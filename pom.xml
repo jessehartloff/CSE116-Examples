@@ -5,6 +5,7 @@
     <url>http://maven.apache.org</url>
     <version>0.0.1</version>
     <dependencies>
+
         <!-- https://mvnrepository.com/artifact/org.scalatest/scalatest -->
         <dependency>
             <groupId>org.scalatest</groupId>

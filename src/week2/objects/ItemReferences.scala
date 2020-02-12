@@ -13,13 +13,14 @@ object ItemReferences {
     // pass-by-reference
     increasePrice(cereal)
 
-    // assignment-by-reference
+
     val cereal2: Item = cereal
 
     increasePrice(cereal2)
 
     // 3.5
     println(cereal.price)
+    println(cereal2.price)
   }
 
 }
