@@ -13,7 +13,7 @@ abstract class InanimateObject(location: PhysicsVector, dimensions: PhysicsVecto
 
   def use(player: Player): Unit
 
-  def magnitudeOfMomentum(): Unit = {
+  def magnitudeOfMomentum(): Double = {
     val magnitudeOfVelocity = Math.sqrt(
       Math.pow(this.velocity.x, 2.0) +
         Math.pow(this.velocity.y, 2.0) +

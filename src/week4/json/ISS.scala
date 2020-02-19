@@ -25,7 +25,6 @@ object ISS {
 
     new Location(lat, lon)
   }
-
   def createJSON(message: String, timestamp: Long, location: Location): String = {
     val jsonTimestamp: JsValue = Json.toJson(timestamp)
     val jsonMessage: JsValue = Json.toJson(message)
