@@ -13,7 +13,7 @@ object MergeSort {
       val leftSorted = mergeSort(left, comparator)
       val rightSorted = mergeSort(right, comparator)
 
-      foreshadowMerge(leftSorted, rightSorted, comparator)
+      merge(leftSorted, rightSorted, comparator)
     }
   }
 
@@ -111,7 +111,7 @@ object MergeSort {
 
     // switch merge sort with Scala's builtin algorithm for timing comparisons (The builtin should always be faster!)
     // Use the foreshadowMerge method for comparable times
-    //    val sortedNumbers = numbers.sortWith((x: Double, y: Double) => x.abs > y.abs)
+//        val sortedNumbers = numbers.sortWith((x: Double, y: Double) => x.abs > y.abs)
 
     val totalTime = (System.nanoTime() - start) / 1000000.0
 
@@ -120,7 +120,7 @@ object MergeSort {
   }
 
   def main(args: Array[String]): Unit = {
-    largeExample(2000)
+    largeExample(100000)
   }
 
 }
