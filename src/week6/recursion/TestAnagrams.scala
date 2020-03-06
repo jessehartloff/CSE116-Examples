@@ -6,6 +6,7 @@ class TestAnagrams extends FunSuite {
   test("Test Anagrams") {
 
     val testCases: Map[String, List[String]] = Map(
+      "" -> List(),
       "a" -> List("a"),
       "fox" -> List("fox", "fxo", "xfo", "xof", "ofx", "oxf"),
       "off" -> List("off", "fof", "ffo"),
