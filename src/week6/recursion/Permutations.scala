@@ -13,7 +13,7 @@ object Permutations {
   }
 
   def main(args: Array[String]): Unit = {
-    allPermutations(List("0", "1"), 5).foreach(println)
+    allPermutations(List("0", "1"), 8).foreach(println)
   }
 
 }
