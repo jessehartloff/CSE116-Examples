@@ -1,4 +1,4 @@
-package week6.functions
+package week7.functions
 
 object Examples {
 
@@ -69,9 +69,20 @@ object Examples {
 
   def foldExample(): Unit = {
     val numbers: List[Double] = List(1.0, 2.0, 3.0, 4.0, 5.0)
-    val factorial: Double = numbers.fold(1.0)(_ * _)
-    println(factorial)
+    val product: Double = numbers.fold(1.0)(_ * _)
+    println(product)
   }
+
+
+
+  def changeTypesExample(): Unit = {
+    val words: List[String] = List("zero", "one", "two", "three")
+    val totalLength: Int = words.foldLeft(0)(_ + _.length)
+    val totalLength2: Int = words.foldRight(0)(_.length + _)
+    println(totalLength)
+    println(totalLength2)
+  }
+
 
 
   def main(args: Array[String]): Unit = {
@@ -84,7 +95,8 @@ object Examples {
     //    yieldExample2()
 //    reduceExample()
 //    reduceExample2()
-    foldExample()
+//    foldExample()
+    changeTypesExample()
 
   }
 }

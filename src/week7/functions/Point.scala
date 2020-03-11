@@ -1,4 +1,4 @@
-package week6.functions
+package week7.functions
 
 class Point(val x: Double, val y: Double) {
 

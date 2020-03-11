@@ -1,4 +1,4 @@
-package week6.functions
+package week7.functions
 
 object Polynomial {
 
