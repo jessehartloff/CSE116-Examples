@@ -105,7 +105,6 @@ class LinkedListNode[A](var value: A, var next: LinkedListNode[A]) {
 
 
   override def toString: String = {
-    List()
     if (this.next == null) {
       this.value.toString
     }else {
