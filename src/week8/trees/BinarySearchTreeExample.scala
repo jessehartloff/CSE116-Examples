@@ -13,7 +13,8 @@ object BinarySearchTreeExample {
     bst.insert(14)
     bst.insert(-3)
 
-    val node = bst.find(4)
+    val node = bst.find(14)
+    node
   }
 
 
@@ -28,7 +29,8 @@ object BinarySearchTreeExample {
     bst.insert(8)
     bst.insert(14)
 
-    val node = bst.find(4)
+    val node = bst.find(14)
+    node
   }
 
 
