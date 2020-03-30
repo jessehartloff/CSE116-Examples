@@ -14,18 +14,26 @@ object LiveCoding {
 
 
   def randomList(n: Int): List[Int] = {
-    var l: List[Int] = List()
-    for (_ <- 0 until n) {
-      l ::= Math.floor(Math.random() * 100.0).intValue()
+    var list: List[Int] = List()
+    for (i <- 0 until n) {
+      list = Math.floor(Math.random() * 100.0).intValue() :: list
     }
-    l
+
+
+    for (i <- list.iterator) {
+      if (Math.random() < 0.001) {
+        println(i)
+      }
+//      list.apply(i)
+    }
+    list
   }
 
   def reduceExample(): Unit = {
-    val numbers = randomList(10000000)
-//    println(numbers)
-//    val result = numbers.reduce((a: Int, b: Int) => a.min(b))
-//    println(result)
+    val numbers = randomList(100000)
+    //    println(numbers)
+    //    val result = numbers.reduce((a: Int, b: Int) => a.min(b))
+    //    println(result)
   }
 
 
