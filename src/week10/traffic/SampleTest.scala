@@ -27,6 +27,25 @@ class SampleTest() extends TestKit(ActorSystem("TestTrafficActors"))
         Direction(intersection2, 500, false)
       )
 
+
+      // t=0 intersection1 green EastWest; intersection2 green EastWest
+      // check at 0(ish)
+      // t=200 intersection1 red EastWest; intersection2 green EastWest
+      // t=300 car arrives at intersection1 from EastWest
+      // check at 350(ish)
+      // t=400 intersection1 green EastWest; intersection2 green EastWest
+      // t=400 car gets green light and drives to intersection2
+      // check at 450(ish)
+      // t=500 intersection1 green EastWest; intersection2 red EastWest
+      // t=600 intersection1 red EastWest; intersection2 red EastWest
+      // t=800 intersection1 green EastWest; intersection2 red EastWest
+      // t=900 car arrives at intersection2 from NorthSouth
+      // t=900 car gets green light and arrives at destination
+      // t=1000 intersection1 red EastWest; intersection2 green EastWest
+
+      // t=2000 intersection1 green EastWest; intersection2 green EastWest
+
+
       val car = system.actorOf(Props(classOf[Car], route1))
 
       car ! GetNextDirection
@@ -44,6 +63,12 @@ class SampleTest() extends TestKit(ActorSystem("TestTrafficActors"))
       car ! GetNextDirection
       direction = expectMsgType[Direction](1000.millis)
       assert(direction == Direction(intersection2, 500, false))
+
+
+      expectNoMessage(500.millis)
+
+      car ! GetNextDirection
+      expectMsgType[ArrivedAtDestination.type](1000.millis)
 
     }
   }
