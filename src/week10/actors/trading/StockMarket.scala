@@ -1,7 +1,6 @@
 package week10.actors.trading
 
 import akka.actor.{ActorSystem, Props}
-import week10.actors.Update
 
 import scala.concurrent.duration._
 

@@ -1,4 +1,4 @@
-package week10.database
+package week12.database
 
 import java.sql.{Connection, DriverManager, ResultSet}
 
