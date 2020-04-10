@@ -12,7 +12,7 @@ case object GreenLight
 
 case class Direction(intersection: ActorRef, timeReachIntersection: Int, eastWest: Boolean)
 
-case class Construction(detour: List[Direction])
+case class Detour(detour: List[Direction])
 
 case object GetNextDirection
 case object ArrivedAtDestination
