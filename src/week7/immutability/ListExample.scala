@@ -9,6 +9,7 @@ object ListExample {
       List(2)
     } else {
       val nMinusOnePrimes: List[Int] = firstNPrimes(n - 1)
+      val next: List[Int] = nMinusOnePrimes.tail
       val maxPrime: Int = nMinusOnePrimes.max
       findPrime(maxPrime + 1, nMinusOnePrimes) :: nMinusOnePrimes
     }

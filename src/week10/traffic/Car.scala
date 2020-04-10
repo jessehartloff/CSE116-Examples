@@ -7,7 +7,7 @@ class Car(var directions: List[Direction]) extends Actor{
 
   import context.dispatcher
 
-  self ! GreenLight
+  self ! directions.head
 
   override def receive: Receive = {
     case approaching: Approaching =>
