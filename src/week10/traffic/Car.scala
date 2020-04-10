@@ -27,8 +27,8 @@ class Car(var directions: List[Direction]) extends Actor{
     case GreenLight =>
       if(directions.nonEmpty) {
         println("driving to intersection: " + directions.head.intersection)
-        self ! directions.head
         directions = directions.tail
+        self ! directions.head
       }else{
         // arrived at destination
       }

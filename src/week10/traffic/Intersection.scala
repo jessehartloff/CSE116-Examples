@@ -38,10 +38,10 @@ class Intersection(timeInterval: Int) extends Actor {
       }
       redEastWest = !redEastWest
       context.system.scheduler.scheduleOnce(
-        timeInterval.milliseconds,
-        self,
-        ChangeLight
-      )
+      timeInterval.milliseconds,
+      self,
+      ChangeLight
+    )
   }
 
 }
