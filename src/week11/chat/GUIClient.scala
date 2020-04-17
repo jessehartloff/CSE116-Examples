@@ -11,7 +11,7 @@ import scalafx.scene.Scene
 import scalafx.scene.control.{Button, TextArea, TextField}
 import scalafx.scene.layout.VBox
 
-class UpdateChat() extends Emitter.Listener {
+class ChatHistory() extends Emitter.Listener {
   override def call(objects: Object*): Unit = {
     // Use Platform.runLater when interacting with the GUI
     // This will run your function on the same thread as the GUI allowing access to all GUI elements/variables
@@ -19,13 +19,25 @@ class UpdateChat() extends Emitter.Listener {
       val message = objects.apply(0).toString
       val history = Json.parse(message).as[List[JsValue]]
       GUIClient.textOutput.text.value = ""
-      for(chat: JsValue <- history){
+      for (chat: JsValue <- history) {
         val username = (chat \ "username").as[String]
         val text = (chat \ "message").as[String]
         GUIClient.textOutput.text.value += username + ": " + text + "\n"
       }
     })
+  }
+}
 
+
+class UpdateChat() extends Emitter.Listener {
+  override def call(objects: Object*): Unit = {
+    Platform.runLater(() => {
+      val message = objects.apply(0).toString
+      val newMessage = Json.parse(message)
+      val username = (newMessage \ "username").as[String]
+      val text = (newMessage \ "message").as[String]
+      GUIClient.textOutput.text.value = username + ": " + text + "\n" + GUIClient.textOutput.text.value
+    })
   }
 }
 
@@ -35,13 +47,15 @@ object GUIClient extends JFXApp {
   val windowWidth: Double = 545
   val windowHeight: Double = 390
 
+//  var socket: Socket = IO.socket("https://chat.cse-software.com")
   var socket: Socket = IO.socket("http://localhost:8080/")
-  socket.on("chat_history", new UpdateChat)
+  socket.on("chat_history", new ChatHistory)
+  socket.on("new_message", new UpdateChat)
   socket.connect()
 
   var chatInput: TextField = new TextField
 
-  val submitButton: Button = new Button{
+  val submitButton: Button = new Button {
     text = "submit"
     onAction = (event: ActionEvent) => {
       socket.emit("chat_message", chatInput.text.value)
@@ -49,7 +63,7 @@ object GUIClient extends JFXApp {
     }
   }
 
-  val textOutput: TextArea = new TextArea{
+  val textOutput: TextArea = new TextArea {
     editable = false
     prefRowCount = 20
     prefColumnCount = 40
@@ -63,7 +77,7 @@ object GUIClient extends JFXApp {
 
   var usernameInput: TextField = new TextField
 
-  val usernameButton: Button = new Button{
+  val usernameButton: Button = new Button {
     text = "submit username"
     onAction = (event: ActionEvent) => {
       socket.emit("register", usernameInput.text.value)
