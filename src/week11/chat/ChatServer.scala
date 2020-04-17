@@ -65,7 +65,7 @@ class ChatMessageListener(server: ChatServer) extends DataListener[String] {
       val username = server.socketToUsername(socket)
       println("received message: " + message + " from " + username)
       ChatDatabase.storeMessage(username, message)
-      server.server.getBroadcastOperations.sendEvent("chat_history", server.chatHistoryJSON())
+      server.server.getBroadcastOperations.sendEvent("chat_message", Json.stringify(new ChatMessage(username, message).asJsValue()))
     }
   }
 }
