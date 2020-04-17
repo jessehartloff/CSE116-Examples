@@ -1,9 +1,16 @@
 const socket = io.connect("http://localhost:8080", {transports: ['websocket']});
 let registered = false;
 
-socket.on('chat_history', function (event) {
-    update(event);
-});
+socket.on('chat_history', update);
+
+socket.on('new_message', addMessage);
+
+function addMessage(newMessage) {
+    const message = JSON.parse(newMessage);
+    const formattedMessage = "<b>" + message['username'] + "</b>: " + message['message'] + "<br/>";
+    const chatElement = document.getElementById("chat_history");
+    chatElement.innerHTML = formattedMessage + chatElement.innerHTML;
+}
 
 function update(history) {
     const chatHistory = JSON.parse(history);
