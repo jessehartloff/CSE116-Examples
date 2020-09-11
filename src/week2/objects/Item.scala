@@ -12,4 +12,7 @@ class Item(val description: String, var price: Double) {
     this.price *= 0.8
   }
 
+  def isMoreExpensive(otherItem: Item): Boolean = {
+    this.price > otherItem.price
+  }
 }
