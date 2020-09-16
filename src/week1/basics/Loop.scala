@@ -16,7 +16,7 @@ object Loop {
   }
 
   def main(args: Array[String]): Unit = {
-    printOneToAlternate(10)
+    printOneTo(10)
   }
 
 }
