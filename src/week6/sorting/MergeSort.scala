@@ -46,6 +46,24 @@ object MergeSort {
     sortedList
   }
 
+
+  def noVarMerge[T](left: List[T], right: List[T], comparator: (T, T) => Boolean): List[T] = {
+    noVarMergeHelper(List(), left, right, comparator)
+  }
+
+  def noVarMergeHelper[T](accumulator: List[T], left: List[T], right: List[T], comparator: (T, T) => Boolean): List[T] = {
+    if(left.isEmpty){
+      accumulator.reverse ::: right
+    }else if(right.isEmpty){
+      accumulator.reverse ::: left
+    }else if(comparator(left.head, right.head)){
+      noVarMergeHelper(left.head :: accumulator, left.drop(1), right, comparator)
+    }else{
+      noVarMergeHelper(right.head :: accumulator, left, right.drop(1), comparator)
+    }
+  }
+
+
   // Same functionality as merge, but uses linked lists much more efficiently
   def foreshadowMerge[T](left: List[T], right: List[T], comparator: (T, T) => Boolean): List[T] = {
 
@@ -115,12 +133,13 @@ object MergeSort {
 
     val totalTime = (System.nanoTime() - start) / 1000000.0
 
-    //    sortedNumbers.foreach(println)
+        sortedNumbers.foreach(println)
     println(f"\nSorting took $totalTime%1.2f ms")
   }
 
+
   def main(args: Array[String]): Unit = {
-    largeExample(100000)
+    largeExample(10000)
   }
 
 }
