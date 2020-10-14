@@ -5,18 +5,47 @@ import week2.objects.Item
 
 class TestBinaryConversions extends FunSuite {
 
-  test("Test Item") {
+  test("Test Decimal to Binary") {
 
-    val item: Item = new Item("Onions", 0.3)
+    val testCases: Map[Int, String] = Map(
+      10 -> "1010",
+      16 -> "10000",
+      1 -> "1",
+      0 -> "0",
+      255 -> "11111111",
+      256 -> "100000000",
+      7 -> "111",
+      895698010 -> "110101011000110100010001011010"
+    )
 
-    assert(item.description == "Onions")
+    for ((input, output) <- testCases) {
+      val computedOutput = BinaryConversions.decimalToBinary(input)
+      assert(computedOutput == output, input + " -> " + computedOutput)
+    }
 
-    item.purchase()
-    item.purchase()
+  }
 
-    assert(item.timesPurchased == 2)
+
+  test("Test Binary to Decimal") {
+    val testCases: Map[String, Int] = Map(
+      "1010" -> 10,
+      "10000" -> 16,
+      "1" -> 1,
+      "0" -> 0,
+      "" -> 0,
+      "11111111" -> 255,
+      "100000000" -> 256,
+      "0000111" -> 7,
+      "000110101011000110100010001011010" -> 895698010
+    )
+
+    for ((input, output) <- testCases) {
+      val computedOutput = BinaryConversions.binaryToDecimal(input)
+      assert(computedOutput == output, input + " -> " + computedOutput)
+    }
 
 
   }
+
 
 }
