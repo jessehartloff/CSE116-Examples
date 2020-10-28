@@ -46,7 +46,7 @@ object StackExample {
     stack = -5 :: stack
 
     val element = stack.head
-    stack = stack.drop(1)
+    stack = stack.tail
   }
 
   def main(args: Array[String]): Unit = {
