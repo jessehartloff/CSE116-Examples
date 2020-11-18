@@ -6,14 +6,12 @@ object ChatDatabase {
 
   val url = "jdbc:mysql://localhost/mysql?serverTimezone=UTC"
   val username = "root"
-  val password = "123456"
+  val password = "12345678"
 
   var connection: Connection = DriverManager.getConnection(url, username, password)
   setupTable()
 
   def setupTable(): Unit = {
-    val statement1 = connection.createStatement()
-    statement1.execute("DROP TABLE IF EXISTS chat")
     val statement = connection.createStatement()
     statement.execute("CREATE TABLE IF NOT EXISTS chat (username TEXT, message TEXT)")
   }
