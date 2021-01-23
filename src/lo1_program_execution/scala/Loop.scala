@@ -1,0 +1,22 @@
+package lo1_program_execution.scala
+
+object Loop {
+
+  def printOneTo(n: Int): Unit = {
+    for (i <- 1 to n) {
+      println("i == " + i)
+    }
+  }
+
+  def printOneToAlternate(n: Int): Unit = {
+    val numbers: Range = 1 to n
+    for (i <- numbers) {
+      println("i == " + i)
+    }
+  }
+
+  def main(args: Array[String]): Unit = {
+    printOneTo(10)
+  }
+
+}

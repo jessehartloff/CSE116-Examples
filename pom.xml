@@ -6,33 +6,71 @@
     <version>0.0.1</version>
     <dependencies>
 
-        <!-- https://mvnrepository.com/artifact/org.scalatest/scalatest -->
+        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-base -->
         <dependency>
-            <groupId>org.scalatest</groupId>
-            <artifactId>scalatest_2.12</artifactId>
-            <version>3.0.5</version>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-base</artifactId>
+            <version>15.0.1</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.typesafe.play/play-json -->
+        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-controls -->
         <dependency>
-            <groupId>com.typesafe.play</groupId>
-            <artifactId>play-json_2.12</artifactId>
-            <version>2.7.1</version>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>15.0.1</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.scalaj/scalaj-http -->
+        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-fxml -->
         <dependency>
-            <groupId>org.scalaj</groupId>
-            <artifactId>scalaj-http_2.12</artifactId>
-            <version>2.4.1</version>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>15.0.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-graphics -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
+            <version>15.0.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-media -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-media</artifactId>
+            <version>15.0.1</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.scalafx/scalafx -->
         <dependency>
             <groupId>org.scalafx</groupId>
-            <artifactId>scalafx_2.12</artifactId>
-            <version>11-R16</version>
+            <artifactId>scalafx_2.13</artifactId>
+            <version>15.0.1-R21</version>
         </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/org.scalatest/scalatest -->
+        <dependency>
+            <groupId>org.scalatest</groupId>
+            <artifactId>scalatest_2.13</artifactId>
+            <version>3.0.9</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/com.typesafe.play/play-json -->
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>play-json_2.13</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.scalaj/scalaj-http -->
+        <dependency>
+            <groupId>org.scalaj</groupId>
+            <artifactId>scalaj-http_2.13</artifactId>
+            <version>2.4.2</version>
+        </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
@@ -44,15 +82,18 @@
         <!-- https://mvnrepository.com/artifact/com.typesafe.akka/akka-actor -->
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-actor_2.12</artifactId>
-            <version>2.5.25</version>
+            <artifactId>akka-actor_2.13</artifactId>
+            <version>2.6.11</version>
         </dependency>
 
+
+        <!-- https://mvnrepository.com/artifact/com.typesafe.akka/akka-testkit -->
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-testkit_2.12</artifactId>
-            <version>2.5.25</version>
+            <artifactId>akka-testkit_2.13</artifactId>
+            <version>2.6.11</version>
         </dependency>
+
 
 
         <dependency>
@@ -62,18 +103,21 @@
         </dependency>
 
 
+        <!-- https://mvnrepository.com/artifact/com.corundumstudio.socketio/netty-socketio -->
         <dependency>
             <groupId>com.corundumstudio.socketio</groupId>
             <artifactId>netty-socketio</artifactId>
-            <version>1.7.12</version>
+            <version>1.7.18</version>
         </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>1.7.28</version>
+            <version>1.7.30</version>
         </dependency>
+
 
     </dependencies>
 </project>
