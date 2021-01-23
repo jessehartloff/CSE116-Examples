@@ -60,12 +60,22 @@ class DisconnectionListener(server: ChatServer) extends DisconnectListener {
 }
 
 class ChatMessageListener(server: ChatServer) extends DataListener[String] {
+
+  def sanitize(input: String): String = {
+    input.replace("&", "&amp;")
+      .replace("<", "&lt;")
+      .replace(">", "&gt;")
+  }
+
   override def onData(socket: SocketIOClient, message: String, ackRequest: AckRequest): Unit = {
     if(server.socketToUsername.contains(socket)) {
       val username = server.socketToUsername(socket)
       println("received message: " + message + " from " + username)
       ChatDatabase.storeMessage(username, message)
-      server.server.getBroadcastOperations.sendEvent("new_message", Json.stringify(new ChatMessage(username, message).asJsValue()))
+      server.server.getBroadcastOperations.sendEvent(
+        "new_message",
+        Json.stringify(new ChatMessage(sanitize(username), sanitize(message)).asJsValue())
+      )
     }
   }
 }

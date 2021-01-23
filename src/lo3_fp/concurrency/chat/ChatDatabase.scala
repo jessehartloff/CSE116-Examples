@@ -17,14 +17,36 @@ object ChatDatabase {
   }
 
 
+
+
+
+
+  def sanitize(input: String): String = {
+    input.replace("&", "&amp;")
+      .replace("<", "&lt;")
+      .replace(">", "&gt;")
+  }
+
+
+
   def storeMessage(username: String, message: String): Unit = {
+
     val statement = connection.prepareStatement("INSERT INTO chat VALUE (?, ?)")
 
-    statement.setString(1, username)
-    statement.setString(2, message)
+    statement.setString(1, sanitize(username))
+    statement.setString(2, sanitize(message))
 
     statement.execute()
   }
+
+
+
+
+
+
+
+
+
 
 
   def accessFullChat(): List[ChatMessage] = {
