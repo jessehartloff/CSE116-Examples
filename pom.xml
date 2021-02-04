@@ -4,6 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
     <url>http://maven.apache.org</url>
     <version>0.0.1</version>
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
     <dependencies>
 
         <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-base -->
@@ -48,14 +52,12 @@
             <version>15.0.1-R21</version>
         </dependency>
 
-
         <!-- https://mvnrepository.com/artifact/org.scalatest/scalatest -->
         <dependency>
             <groupId>org.scalatest</groupId>
             <artifactId>scalatest_2.13</artifactId>
             <version>3.0.9</version>
         </dependency>
-
 
         <!-- https://mvnrepository.com/artifact/com.typesafe.play/play-json -->
         <dependency>
@@ -71,7 +73,6 @@
             <version>2.4.2</version>
         </dependency>
 
-
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
             <groupId>mysql</groupId>
@@ -86,7 +87,6 @@
             <version>2.6.11</version>
         </dependency>
 
-
         <!-- https://mvnrepository.com/artifact/com.typesafe.akka/akka-testkit -->
         <dependency>
             <groupId>com.typesafe.akka</groupId>
@@ -94,14 +94,12 @@
             <version>2.6.11</version>
         </dependency>
 
-
-
+        <!-- https://mvnrepository.com/artifact/io.socket/socket.io-client -->
         <dependency>
             <groupId>io.socket</groupId>
             <artifactId>socket.io-client</artifactId>
             <version>1.0.0</version>
         </dependency>
-
 
         <!-- https://mvnrepository.com/artifact/com.corundumstudio.socketio/netty-socketio -->
         <dependency>
@@ -110,14 +108,12 @@
             <version>1.7.18</version>
         </dependency>
 
-
         <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>1.7.30</version>
         </dependency>
-
 
     </dependencies>
 </project>
