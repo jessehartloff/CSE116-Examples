@@ -2,7 +2,7 @@ package lo1_program_execution.scala
 
 object DataStructures {
 
-  def arrayExample(): Unit = {
+  def arrayMethods(): Unit = {
     // Create new Array of Int
     val arr: Array[Int] = Array(2, 3, 4)
 
@@ -33,7 +33,7 @@ object DataStructures {
     }
   }
 
-  def listExample(): Unit = {
+  def listMethods(): Unit = {
     // Create new Array of Int
     var list: List[Int] = List(2, 3, 4)
 
@@ -55,7 +55,7 @@ object DataStructures {
     }
   }
 
-  def mapExample(): Unit = {
+  def mapMethods(): Unit = {
     // Create new Map of Int to Int
     var myMap: Map[Int, Int] = Map(2 -> 4, 3 -> 9, 4 -> 16)
 
@@ -75,9 +75,9 @@ object DataStructures {
   }
 
   def main(args: Array[String]): Unit = {
-    arrayExample()
-    listExample()
-    mapExample()
+    arrayMethods()
+    listMethods()
+    mapMethods()
   }
 
 }
