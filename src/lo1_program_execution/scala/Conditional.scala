@@ -18,7 +18,6 @@ object Conditional {
     println(computeSize(70.0))
     println(computeSize(50.0))
     println(computeSize(10.0))
-    val yyy: Tuple2[Int, Int] = 10 -> 5
   }
 
 }

@@ -53,6 +53,17 @@ object MapExample {
     referenceMap.getOrElse(number, "No conversion found")
   }
 
+
+  // Takes a list and returns a map that maps the values of the list
+  // to their absolute values
+  def mapInputToAbs(input: List[Int]): Map[Int, Int] ={
+    var output: Map[Int, Int] = Map()
+    for(number <- input){
+      output += number -> Math.abs(number)
+    }
+    output
+  }
+
   def main(args: Array[String]): Unit = {
     val mapOfNumbers: Map[Int, String] = mapExample()
     println(numberToString(mapOfNumbers, 1))
