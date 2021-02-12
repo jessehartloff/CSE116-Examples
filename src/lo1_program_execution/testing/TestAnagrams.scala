@@ -13,7 +13,10 @@ class TestAnagrams extends FunSuite {
       "a" -> List("a"),
       "cse" -> List("cse","ces", "sec", "sce","esc", "ecs"),
       "off" -> List("off", "fof", "ffo"),
-      "eeeeee" -> List("eeeeee")
+      "eeeeee" -> List("eeeeee"),
+      "oop" -> List("oop", "opo", "poo"),
+      "ooooo" -> List("ooooo"),
+      "was" -> List("was", "wsa", "saw", "swa", "aws", "asw")
     )
 
     for((input, output) <- testCases){
