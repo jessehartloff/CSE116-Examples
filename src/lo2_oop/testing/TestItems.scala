@@ -1,7 +1,7 @@
-package lo1_program_execution.testing
+package lo2_oop.testing
 
+import lo2_oop.objects.Item
 import org.scalatest._
-import lo1_program_execution.objects.Item
 
 class TestItems extends FunSuite {
 

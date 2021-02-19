@@ -1,4 +1,4 @@
-package lo1_program_execution.objects
+package lo2_oop.objects
 
 class Item(val description: String, var price: Double) {
 

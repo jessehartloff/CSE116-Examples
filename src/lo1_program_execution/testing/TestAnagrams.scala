@@ -1,7 +1,7 @@
 package lo1_program_execution.testing
 
-import org.scalatest._
 import lo1_program_execution.objects.Anagrams
+import org.scalatest._
 
 class TestAnagrams extends FunSuite {
 
