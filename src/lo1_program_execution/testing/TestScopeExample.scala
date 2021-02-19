@@ -92,18 +92,6 @@ class TestScopeExample extends FunSuite {
   test("test factorial method"){
 
     val testCases: Map[Int, Int] = Map(
-      -12 -> -479001600,
-      -11 -> -39916800,
-      -10 -> -3628800,
-      -9 -> -362880,
-      -8 -> -40320,
-      -7 -> -5040,
-      -6 -> -720,
-      -5 -> -120,
-      -4 -> -24,
-      -3 -> -6,
-      -2 -> -2,
-      -1 -> -1,
       0 -> 1,
       1 -> 1,
       2 -> 2,
