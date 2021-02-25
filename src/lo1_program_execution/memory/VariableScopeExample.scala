@@ -64,10 +64,6 @@ object VariableScopeExample {
       y -= 1
     }
 
-    if (isNegative(x)) {
-      z *= -1
-    }
-
     z
   }
 
