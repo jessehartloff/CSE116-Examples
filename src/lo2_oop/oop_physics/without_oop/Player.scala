@@ -12,7 +12,7 @@ class Player(val location: PhysicsVector,
 
   var health: Int = maxHealth
 
-  def useBall(ball: Ball): Unit = {
+  def useBall(ball: DodgeBall): Unit = {
     ball.use(this)
   }
 

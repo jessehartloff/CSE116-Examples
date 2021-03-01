@@ -4,10 +4,10 @@ import archived.physics.PhysicsVector
 
 
 // Use override since DynamicObject already declared variables with these names
-class Ball(location: PhysicsVector,
-           dimensions: PhysicsVector,
-           velocity: PhysicsVector,
-           mass: Double)
+class DodgeBall(location: PhysicsVector,
+                dimensions: PhysicsVector,
+                velocity: PhysicsVector,
+                mass: Double)
   extends InanimateObject(location, dimensions, velocity) {
 
   override def use(player: Player): Unit = {
