@@ -2,10 +2,10 @@ package lo2_oop.oop_physics.without_oop
 
 import archived.physics.PhysicsVector
 
-class Ball(val location: PhysicsVector,
-           val dimensions: PhysicsVector,
-           val velocity: PhysicsVector,
-           val mass: Double) {
+class DodgeBall(val location: PhysicsVector,
+                val dimensions: PhysicsVector,
+                val velocity: PhysicsVector,
+                val mass: Double) {
 
   def use(player: Player): Unit = {
     this.velocity.x = player.orientation.x * player.strength
