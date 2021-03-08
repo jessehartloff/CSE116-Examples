@@ -1,7 +1,6 @@
 package archived.live_coding.recursion
 
 import org.scalatest._
-import lo1_program_execution.objects.Item
 
 class TestBinaryConversions extends FunSuite {
 
