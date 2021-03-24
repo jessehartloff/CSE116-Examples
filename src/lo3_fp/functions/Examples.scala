@@ -54,7 +54,7 @@ object Examples {
 
 
   def reduceExample(): Unit = {
-    val numbers: List[Double] = List(1.0, 2.0, 3.0, 4.0, 5.0)
+    val numbers: List[Double] = List()
     val sumSquares: (Double, Double) => Double = (a: Double, b: Double) => a + Math.pow(b, 2.0)
     val sumOfSquares: Double = numbers.reduce(sumSquares)
     println(sumOfSquares)
@@ -74,6 +74,12 @@ object Examples {
   }
 
 
+  def sumExample(): Unit = {
+    val numbers: List[Double] = List(1.0, 2.0, 3.0, 4.0, 5.0)
+    val sum: Double = numbers.sum
+    println(sum)
+  }
+
 
   def changeTypesExample(): Unit = {
     val words: List[String] = List("zero", "one", "two", "three")
@@ -84,6 +90,25 @@ object Examples {
   }
 
 
+  def distinctExample(): Unit = {
+    val numbers: List[Int] = List(1, 1, 2, 2, 2, 3, 4, 4, 5)
+    val distinctElements: List[Int] = numbers.distinct
+    println(distinctElements)
+  }
+
+
+  def sliceExample(): Unit = {
+    val numbers: List[Int] = List(0, 10, 20, 30, 40, 50, 60)
+    val slicedElements: List[Int] = numbers.slice(1, 4)
+    println(slicedElements)
+  }
+
+  def reverseExample(): Unit = {
+    val numbers: List[Int] = List(0, 10, 20, 30, 40, 50, 60)
+    val reversed: List[Int] = numbers.reverse
+    println(reversed)
+  }
+
 
   def main(args: Array[String]): Unit = {
 
@@ -93,10 +118,14 @@ object Examples {
     //    mapExample2()
     //    yieldExample()
     //    yieldExample2()
-//    reduceExample()
-//    reduceExample2()
-//    foldExample()
-    changeTypesExample()
+        reduceExample()
+    //    reduceExample2()
+    //    foldExample()
+    //    sumExample()
+    //    distinctExample()
+    //    sliceExample()
+//    reverseExample()
+    //    changeTypesExample()
 
   }
 }
