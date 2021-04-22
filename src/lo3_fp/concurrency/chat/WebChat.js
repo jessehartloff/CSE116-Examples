@@ -7,7 +7,7 @@ socket.on('new_message', addMessage);
 
 function addMessage(newMessage) {
     const message = JSON.parse(newMessage);
-    const formattedMessage = "<b>" + message['from'] + "</b>: " + message['message'] + "<br/>";
+    const formattedMessage = "<b>" + message['username'] + "</b>: " + message['message'] + "<br/>";
     const chatElement = document.getElementById("chat_history");
     chatElement.innerHTML = formattedMessage + chatElement.innerHTML;
 }
@@ -30,9 +30,8 @@ function register() {
 
 function sendMessage() {
     if (registered) {
-        let to = document.getElementById("to_input").value;
         let message = document.getElementById("chat_input").value;
         document.getElementById("chat_input").value = "";
-        socket.emit("direct_message", {"to":to, "message":message});
+        socket.emit("chat_message", message);
     }
 }

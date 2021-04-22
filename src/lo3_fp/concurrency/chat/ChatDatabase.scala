@@ -6,7 +6,7 @@ object ChatDatabase {
 
   val url = "jdbc:mysql://localhost/mysql?serverTimezone=UTC"
   val username = "root"
-  val password = "12345678"
+  val password = "123456"
 
   var connection: Connection = DriverManager.getConnection(url, username, password)
   setupTable()
