@@ -19,17 +19,17 @@ object DataStructures {
 
     // Iterate over indices using to which includes the endpoint
     for (index <- 0 to (arr.length-1)) {
-      println(index)
+      println("The value at index " + index + " is " + arr(index))
     }
 
     // Iterate over indices using until which excludes the endpoint
     for (index <- 0 until arr.length) {
-      println(index)
+      println("The value at index " + index + " is " + arr(index))
     }
 
     // Iterate over indices using .indices
     for (index <- arr.indices) {
-      println(index)
+      println("The value at index " + index + " is " + arr(index))
     }
   }
 
