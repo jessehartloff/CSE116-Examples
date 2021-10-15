@@ -65,15 +65,35 @@ object SelectionSort {
     data
   }
 
+  def noVarSelectionSort[T](inputData: List[T], comparator: (T, T) => Boolean): List[T] = {
+    noVarSelectionSortHelper(List(), inputData, comparator)
+  }
 
+  def noVarSelectionSortHelper[T](accumulator: List[T], remainingData: List[T], comparator: (T, T) => Boolean): List[T] = {
+    if(remainingData.isEmpty){
+      accumulator.reverse
+    }else{
+      val minValue = remainingData.reduce((acc: T, element:T) => if(comparator(acc, element)) acc else element)
+      val newList = removeFirstOccurrence(List(), remainingData, minValue, comparator)
+      noVarSelectionSortHelper(minValue :: accumulator, newList, comparator)
+    }
+  }
+
+  def removeFirstOccurrence[T](before: List[T], after: List[T], toRemove: T, comparator: (T, T) => Boolean): List[T] = {
+    if(!comparator(toRemove, after.head) && ! comparator(after.head, toRemove)){
+      before.reverse ::: after.drop(1)
+    }else{
+      removeFirstOccurrence(after.head :: before, after.drop(1), toRemove, comparator)
+    }
+  }
 
   def largeExample(n: Int): Unit = {
 
     // Sort random doubles in the range -0.5 - 0.5 by absolute value
-    val numbers: List[Double] = (for (_ <- 0 to n) yield Math.random() - 0.5).toList
+    val numbers: List[Double] = (for (_ <- 0 until n) yield Math.random() - 0.5).toList
 
     val start = System.nanoTime()
-    val sortedNumbers = selectionSort(numbers, (x: Double, y: Double) => x.abs > y.abs)
+    val sortedNumbers = noVarSelectionSort(numbers, (x: Double, y: Double) => x.abs > y.abs)
     val totalTime = (System.nanoTime() - start) / 1000000.0
 
     sortedNumbers.foreach(println)
@@ -83,7 +103,7 @@ object SelectionSort {
   def main(args: Array[String]): Unit = {
     intSortingExample()
     genericSortingExample()
-    largeExample(2000)
+    largeExample(10)
   }
 
 }
