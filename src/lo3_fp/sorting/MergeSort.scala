@@ -13,7 +13,7 @@ object MergeSort {
       val leftSorted = mergeSort(left, comparator)
       val rightSorted = mergeSort(right, comparator)
 
-      merge(leftSorted, rightSorted, comparator)
+      noVarMerge(leftSorted, rightSorted, comparator)
     }
   }
 
@@ -139,7 +139,7 @@ object MergeSort {
 
 
   def main(args: Array[String]): Unit = {
-    largeExample(10000)
+    largeExample(1000000)
   }
 
 }

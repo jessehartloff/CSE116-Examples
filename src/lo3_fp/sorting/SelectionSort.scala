@@ -65,6 +65,19 @@ object SelectionSort {
     data
   }
 
+  def noVarSelectionSort[T](inputData: List[T], comparator: (T, T) => Boolean): List[T] = {
+    noVarSelectionSortHelper(List(), inputData, comparator)
+  }
+
+  def noVarSelectionSortHelper[T](accumulator: List[T], remainingData: List[T], comparator: (T, T) => Boolean): List[T] = {
+    if(remainingData.isEmpty){
+      accumulator.reverse
+    }else{
+      val minValue = remainingData.reduce((acc: T, elem:T) => if(comparator(acc, elem)) acc else elem)
+      noVarSelectionSortHelper(minValue :: accumulator, remainingData.drop(1), comparator)
+    }
+  }
+
 
   def largeExample(n: Int): Unit = {
 
