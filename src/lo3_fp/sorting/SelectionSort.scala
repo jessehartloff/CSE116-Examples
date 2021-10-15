@@ -73,7 +73,7 @@ object SelectionSort {
     if(remainingData.isEmpty){
       accumulator.reverse
     }else{
-      val minValue = remainingData.reduce((acc: T, elem:T) => if(comparator(acc, elem)) acc else elem)
+      val minValue = remainingData.reduce((acc: T, element:T) => if(comparator(acc, element)) acc else element)
       noVarSelectionSortHelper(minValue :: accumulator, remainingData.drop(1), comparator)
     }
   }
