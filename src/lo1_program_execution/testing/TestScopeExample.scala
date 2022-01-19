@@ -52,7 +52,7 @@ class TestScopeExample extends FunSuite {
 
     for((inputs, output) <- testCases){
       val computed: Int = VariableScopeExample.subtract(inputs.head, inputs(1))
-      assert(computed == output, inputs + " -> " + computed)
+      assert(computed == output, inputs.toString() + " -> " + computed)
     }
 
   }
@@ -83,7 +83,7 @@ class TestScopeExample extends FunSuite {
 
     for((inputs, output) <- testCases){
       val computed: Int = VariableScopeExample.divide(inputs.head, inputs(1))
-      assert(computed == output, inputs + " -> " + computed)
+      assert(computed == output, inputs.toString() + " -> " + computed)
     }
 
 
@@ -148,7 +148,7 @@ class TestScopeExample extends FunSuite {
 
     for((inputs, output) <- testCases){
       val computed: Int = VariableScopeExample.permute(inputs.head, inputs(1))
-      assert(computed == output, inputs + " -> " + computed)
+      assert(computed == output, inputs.toString() + " -> " + computed)
     }
 
   }

@@ -4,12 +4,12 @@ import lo2_oop.hulk.{BruceBanner, Car}
 
 abstract class State(banner: BruceBanner) {
 
-  def makeAngry()
+  def makeAngry(): Unit
 
-  def calmDown()
+  def calmDown(): Unit
 
-  def useCar(car: Car)
+  def useCar(car: Car): Unit
 
-  def fight()
+  def fight(): Unit
 
 }

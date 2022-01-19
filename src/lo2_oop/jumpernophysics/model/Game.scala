@@ -33,7 +33,7 @@ class Game {
 
   // Generates all the platforms up to the given level when called. This allows platforms to be generated
   // off screen as a player climbs higher
-  def generateUntilLevel(levelStop: Int) {
+  def generateUntilLevel(levelStop: Int): Unit = {
 
     val leftWall = new Wall(new PhysicsVector(0.0, -1.0, lastLevelGenerated), new PhysicsVector(platformThickness, 2.0, levelStop))
     val rightWall = new Wall(new PhysicsVector(gridWidth - platformThickness, -1.0, lastLevelGenerated), new PhysicsVector(platformThickness, 2.0, levelStop))

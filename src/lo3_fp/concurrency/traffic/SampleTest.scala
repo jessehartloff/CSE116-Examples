@@ -68,9 +68,6 @@ class SampleTest() extends TestKit(ActorSystem("TestTrafficActors"))
 
       expectNoMessage(FiniteDuration(500, duration.MILLISECONDS))
 
-      car ! GetNextDirection
-      expectMsgType[ArrivedAtDestination.type](FiniteDuration(1000, duration.MILLISECONDS))
-
     }
   }
 

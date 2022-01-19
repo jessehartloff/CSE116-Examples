@@ -19,7 +19,7 @@ class TestBinaryConversions extends FunSuite {
 
     for ((input, output) <- testCases) {
       val computedOutput = BinaryConversions.decimalToBinary(input)
-      assert(computedOutput == output, input + " -> " + computedOutput)
+      assert(computedOutput == output, input.toString + " -> " + computedOutput)
     }
 
   }

@@ -1,5 +1,6 @@
 package lo3_fp.sorting
 
+import scala.annotation.tailrec
 import scala.collection.mutable.ListBuffer
 
 object MergeSort {
@@ -51,6 +52,7 @@ object MergeSort {
     noVarMergeHelper(List(), left, right, comparator)
   }
 
+  @tailrec
   def noVarMergeHelper[T](accumulator: List[T], left: List[T], right: List[T], comparator: (T, T) => Boolean): List[T] = {
     if(left.isEmpty){
       accumulator.reverse ::: right
@@ -80,8 +82,8 @@ object MergeSort {
 
       val sortedList: ListBuffer[T] = ListBuffer()
 
-      var leftVal = leftIter.next
-      var rightVal = rightIter.next
+      var leftVal = leftIter.next()
+      var rightVal = rightIter.next()
 
       var leftUpdated = false
       var rightUpdated = false
@@ -89,11 +91,11 @@ object MergeSort {
       while (leftIter.hasNext || rightIter.hasNext) {
 
         if (leftUpdated) {
-          leftVal = leftIter.next
+          leftVal = leftIter.next()
           leftUpdated = false
         }
         if (rightUpdated) {
-          rightVal = rightIter.next
+          rightVal = rightIter.next()
           rightUpdated = false
         }
 
