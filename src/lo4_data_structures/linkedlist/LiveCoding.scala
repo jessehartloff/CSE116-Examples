@@ -9,7 +9,7 @@ object LiveCoding {
 
     val totalTime = System.currentTimeMillis() - startTime
 
-    println(totalTime + " ms")
+    println(totalTime.toString + " ms")
   }
 
 
