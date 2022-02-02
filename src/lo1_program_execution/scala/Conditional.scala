@@ -2,7 +2,7 @@ package lo1_program_execution.scala
 
 object Conditional {
 
-  def computeSize(input: Double): Any = {
+  def computeSize(input: Double): String = {
     val large: Double = 60.0
     val medium: Double = 30.0
     if (input >= large) {
