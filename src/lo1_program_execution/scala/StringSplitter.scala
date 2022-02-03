@@ -4,14 +4,14 @@ object StringSplitter {
 
   def computePercentTrue(line: String): Double = {
     val splits: Array[String] = line.split(";")
-    var totalCount: Double = 0
-    var trueCount: Double = 0
+    var totalCount: Double = 0.0
+    var trueCount: Double = 0.0
     for (value <- splits) {
       val valueAsBoolean: Boolean = value.toBoolean
       if (valueAsBoolean) {
-        trueCount += 1
+        trueCount += 1.0
       }
-      totalCount += 1
+      totalCount += 1.0
     }
     trueCount / totalCount
   }
@@ -20,9 +20,9 @@ object StringSplitter {
     // There are many to solve this, or any, problem
     // Here is one alternative using Scala's loop filter
     val splits: Array[String] = line.split(";")
-    var trueCount: Double = 0
+    var trueCount: Double = 0.0
     for (value <- splits if value.toBoolean) {
-      trueCount += 1
+      trueCount += 1.0
     }
     trueCount / splits.length
   }
