@@ -42,6 +42,7 @@ object DataStructures {
 
     // Access a value by position
     val y: Int = list.apply(1)
+    val z: Int = list(1)
 
     // Add an element to the end of the list (append)
     list = list :+ 50
