@@ -11,7 +11,7 @@ object Basics {
   }
 
   def main(args: Array[String]): Unit = {
-    val i: Int = 5
+    val i: Int = 3
     val n = computeFactorial(i)
     println(n)
   }
