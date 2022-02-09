@@ -1,6 +1,6 @@
-package live_coding.tests
+package archived.live_coding.tests
 
-import live_coding.functions.Numbers
+import live_coding.lo1.functions.Numbers
 import org.scalatest._
 
 class TestHistogram extends FunSuite {
