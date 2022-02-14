@@ -15,7 +15,7 @@ object FileReader {
   }
 
   def main(args: Array[String]): Unit = {
-    val filename = "testFile.txt"
+    val filename = "data/testFile.txt"
     val contents = convertFileToString(filename)
     println(contents)
   }
