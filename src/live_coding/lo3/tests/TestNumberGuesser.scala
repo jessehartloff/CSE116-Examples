@@ -1,6 +1,6 @@
-package live_coding.lo1.tests
+package live_coding.lo3.tests
 
-import live_coding.lo1.functions.NumberGuesser
+import live_coding.lo3.NumberGuesser
 import org.scalatest._
 
 class TestNumberGuesser extends FunSuite {

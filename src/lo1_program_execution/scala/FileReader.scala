@@ -2,6 +2,7 @@ package lo1_program_execution.scala
 
 import scala.io.{BufferedSource, Source}
 
+
 object FileReader {
 
   def convertFileToString(filename: String): String = {
@@ -14,7 +15,7 @@ object FileReader {
   }
 
   def main(args: Array[String]): Unit = {
-    val filename = "data/testFile.txt"
+    val filename = "testFile.txt"
     val contents = convertFileToString(filename)
     println(contents)
   }

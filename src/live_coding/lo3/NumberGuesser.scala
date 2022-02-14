@@ -1,4 +1,4 @@
-package live_coding.lo1.functions
+package live_coding.lo3
 
 object NumberGuesser {
 

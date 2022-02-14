@@ -16,6 +16,8 @@ class TestComputeSize extends FunSuite {
   }
 
 
+
+
   test("Size boundaries are checked"){
     val largeDouble: Double = 60.0
     val mediumDoubleUpperBound: Double = 59.99

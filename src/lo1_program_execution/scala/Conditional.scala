@@ -10,7 +10,7 @@ object Conditional {
     } else if (input >= medium) {
       "medium"
     } else {
-      "small"
+      "little"
     }
   }
 
