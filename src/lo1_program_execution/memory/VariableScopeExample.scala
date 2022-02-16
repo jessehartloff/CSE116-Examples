@@ -81,7 +81,7 @@ object VariableScopeExample {
   def main(args: Array[String]): Unit = {
     val x: Int = 5
     val y: Int = 3
-    val z: Int = permute(x, y)
+    val z: Int = subtract(x, y)
     println(z)
   }
 
