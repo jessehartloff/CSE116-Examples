@@ -1,16 +1,14 @@
 package lo2_oop.memory.rpg_example
 
-class Party(val characterOne: PartyCharacter,
-            val characterTwo: PartyCharacter) {
+class Party(val character1: PartyCharacter,
+            val character2: PartyCharacter) {
 
   var battlesWon: Int = 0
 
   def winBattle(xp: Int): Unit = {
     this.battlesWon += 1
-    this.characterOne.battlesWon += 1
-    this.characterTwo.battlesWon += 1
-    this.characterOne.experiencePoints += xp
-    this.characterTwo.experiencePoints += xp
+    this.character1.winBattle(xp)
+    this.character2.winBattle(xp)
   }
 
 }

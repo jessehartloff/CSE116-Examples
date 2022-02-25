@@ -48,7 +48,6 @@ class TestPlayer extends FunSuite {
     player2.attack(player1)
 
     assert(!player1.conscious())
-
   }
 
 
