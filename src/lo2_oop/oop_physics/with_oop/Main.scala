@@ -6,10 +6,6 @@ import lo2_oop.oop_physics.PhysicsVector
 object Main {
 
   def polymorphismExample(): Unit = {
-    val v = new PhysicsVector(1.0)
-    val t: Test = new Test(v)
-    println(t)
-
 
     val player: Player = new Player(new PhysicsVector(0.0, 0.0),
       new PhysicsVector(1.0, 0.0), 255, 10)
