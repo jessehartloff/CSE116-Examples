@@ -13,6 +13,6 @@ object RPGMain {
     party.winBattle(bossXP)
 
     println(hero.xp)
-    println(party.characterTwo.xp)
+    println(party.character2.xp)
   }
 }

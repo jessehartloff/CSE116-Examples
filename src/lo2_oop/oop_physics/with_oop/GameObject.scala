@@ -1,9 +1,9 @@
-package lo2_oop.oop_physics.with_oop_updated
+package lo2_oop.oop_physics.with_oop
 
-import archived.physics.PhysicsVector
-import archived.physics.objects.DynamicObject
+import lo2_oop.oop_physics.PhysicsVector
 
-abstract class GameObject(location: PhysicsVector) extends PhysicsObject(location) {
+
+abstract class GameObject(objectLocation: PhysicsVector) extends PhysicsObject(objectLocation) {
 
   def objectMass(): Double
 

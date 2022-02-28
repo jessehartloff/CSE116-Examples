@@ -1,6 +1,6 @@
 package lo2_oop.oop_physics.without_oop
 
-import archived.physics.PhysicsVector
+import lo2_oop.oop_physics.PhysicsVector
 
 
 class HealthPotion(val location: PhysicsVector,

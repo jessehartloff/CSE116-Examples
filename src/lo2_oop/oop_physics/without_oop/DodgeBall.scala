@@ -1,6 +1,7 @@
 package lo2_oop.oop_physics.without_oop
 
-import archived.physics.PhysicsVector
+import lo2_oop.oop_physics.PhysicsVector
+
 
 class DodgeBall(val location: PhysicsVector,
                 val dimensions: PhysicsVector,

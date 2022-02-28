@@ -1,20 +1,16 @@
 package lo2_oop.oop_physics.with_oop
 
-import archived.physics.PhysicsVector
-import archived.physics.objects.DynamicObject
+import lo2_oop.oop_physics.PhysicsVector
 
 
-class Player(location: PhysicsVector,
-             dimensions: PhysicsVector,
-             _velocity: PhysicsVector,
+class Player(playerLocation: PhysicsVector,
              var orientation: PhysicsVector,
              val maxHealth: Int,
-             val strength: Int) extends DynamicObject(location, dimensions) {
+             val strength: Int) extends PhysicsObject(playerLocation) {
 
-  this.velocity = _velocity
   var health: Int = maxHealth
 
-  def useItem(item: InanimateObject): Unit = {
+  def useItem(item: GameObject): Unit = {
     item.use(this)
   }
 

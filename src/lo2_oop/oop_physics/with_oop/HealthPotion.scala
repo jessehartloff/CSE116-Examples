@@ -1,14 +1,9 @@
 package lo2_oop.oop_physics.with_oop
 
-import archived.physics.PhysicsVector
+import lo2_oop.oop_physics.PhysicsVector
 
 
-class HealthPotion(location: PhysicsVector,
-                   dimensions: PhysicsVector,
-                   velocity: PhysicsVector,
-                   val volume: Int)
-  extends InanimateObject(location, dimensions, velocity) {
-
+class HealthPotion(potionLocation: PhysicsVector, val volume: Int) extends GameObject(potionLocation) {
 
   override def objectMass(): Double = {
     val massPerVolume: Double = 7.0
@@ -20,7 +15,7 @@ class HealthPotion(location: PhysicsVector,
   }
 
   override def toString: String = {
-    "location: " + this.location + "; velocity: " + this.velocity + "; volume: " + volume
+    "location: " + this.location + "; volume: " + volume
   }
 
   override def equals(obj: Any): Boolean = {

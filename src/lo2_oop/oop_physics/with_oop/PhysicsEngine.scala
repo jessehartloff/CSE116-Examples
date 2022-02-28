@@ -1,4 +1,4 @@
-package lo2_oop.oop_physics.with_oop_updated
+package lo2_oop.oop_physics.with_oop
 
 object PhysicsEngine {
 
