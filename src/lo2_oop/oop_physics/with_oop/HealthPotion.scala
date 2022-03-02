@@ -10,7 +10,7 @@ class HealthPotion(potionLocation: PhysicsVector, val volume: Int) extends GameO
     volume * massPerVolume
   }
 
-  def use(player: Player): Unit = {
+  override def use(player: Player): Unit = {
     player.health = (player.health + this.volume).min(player.maxHealth)
   }
 
