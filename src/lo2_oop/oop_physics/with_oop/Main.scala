@@ -23,7 +23,7 @@ object Main {
 
     val potion1: HealthPotion = new HealthPotion(new PhysicsVector(0, 0, 0),4)
     val potion2: HealthPotion = new HealthPotion(new PhysicsVector(0, 0, 0),4)
-    val potion3 = potion1
+    val potion3: HealthPotion = potion1
 
     println(potion1)
     println(potion2)

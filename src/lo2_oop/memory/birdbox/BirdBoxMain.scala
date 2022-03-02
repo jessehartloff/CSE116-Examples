@@ -1,4 +1,4 @@
-package lo2_oop.memory
+package lo2_oop.memory.birdbox
 
 object BirdBoxMain {
 
