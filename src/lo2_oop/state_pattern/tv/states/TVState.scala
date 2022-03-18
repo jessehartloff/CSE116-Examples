@@ -2,7 +2,7 @@ package lo2_oop.state_pattern.tv.states
 
 import lo2_oop.state_pattern.tv.TV
 
-class TVState(val tv: TV) {
+abstract class TVState(val tv: TV) {
 
   def volumeUp(): Unit = {}
 
