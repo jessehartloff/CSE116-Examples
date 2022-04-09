@@ -43,6 +43,6 @@ object LinkedListExample {
 
     val toCall = (equipment: Equipment) => equipment.buy()
 
-//    equipmentList.foreach(toCall)
+    equipmentList.forEach(toCall)
   }
 }
