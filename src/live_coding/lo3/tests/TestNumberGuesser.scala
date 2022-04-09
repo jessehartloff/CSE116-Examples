@@ -14,15 +14,19 @@ class TestNumberGuesser extends FunSuite {
   def checkGuesser(lower: Double, upper: Double, numberToGuess: Double): Unit = {
     val guessingFunction: Double => Boolean = (guessedNumber: Double) => numberToGuess > guessedNumber
     val actual = NumberGuesser.guessTheNumber(lower, upper, guessingFunction)
+    println("expected: " + numberToGuess + "  | computed: " + actual)
     assert(compareDoubles(actual, numberToGuess), "expected: " + numberToGuess + "  | computed: " + actual)
   }
 
   test("numbers from 0 to 100") {
 
-  }
+    val numberToGuess: List[Double] = List(0.0, 100.0, 50.0, 55.55, 12.79, 0.15, 99.96666)
 
-  test("numbers from -1000 to 1000") {
-
+    val lower = 0.0
+    val upper = 100.0
+    for(number <- numberToGuess){
+      checkGuesser(lower, upper, number)
+    }
   }
 
 }
