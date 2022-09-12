@@ -10,7 +10,16 @@ object Numbers {
    * @param data A list of numbers
    * @return A histogram indicated the number of times each Int appears in the provided list
    */
-
+  def histogram(input: List[Int]): Map[Int, Int] = {
+    var result: Map[Int, Int] = Map()
+    for(value <- input){
+      if(!result.contains(value)){
+        result = result + (value -> 0)
+      }
+      result = result + (value -> (result(value) + 1))
+    }
+    result
+  }
 
 
   /**

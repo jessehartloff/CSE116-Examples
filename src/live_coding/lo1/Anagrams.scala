@@ -2,11 +2,6 @@ package live_coding.lo1
 
 object Anagrams {
 
-
-  def isAnagram(s1: String, s2: String): Boolean = {
-    s1.toLowerCase().replace(" ", "").toList.sorted == s2.toLowerCase().replace(" ", "").toList.sorted
-  }
-
   def anagrams(input: String): List[String] ={
     var output: List[String] = List()
     if(input.isEmpty){
