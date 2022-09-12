@@ -52,7 +52,7 @@ object StringSplitter {
     // expecting 0.8
     val percentTrue = computePercentTrue(testInput)
     println("Percentage true == " + percentTrue)
-    accessSplitsExample()
+//    accessSplitsExample()
   }
 
 }

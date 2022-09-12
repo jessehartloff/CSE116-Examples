@@ -1,4 +1,4 @@
-package live_coding.lo1.functions
+package live_coding.lo1
 
 object Numbers {
 
@@ -10,21 +10,7 @@ object Numbers {
    * @param data A list of numbers
    * @return A histogram indicated the number of times each Int appears in the provided list
    */
-  def histogram(data: List[Int]): Map[Int, Int] = {
-    var answer: Map[Int, Int] = Map()
 
-    for (i <- data) {
-      if(answer.contains(i)){
-        // I've seen this value before
-        answer = answer + (i -> (answer(i)+1))
-      }else{
-        // new value
-        answer = answer + (i -> 1)
-      }
-    }
-
-    answer
-  }
 
 
   /**

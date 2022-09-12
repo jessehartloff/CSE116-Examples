@@ -57,8 +57,8 @@ object ListExample {
     // iterate over both lists simultaneously using indices
     // Note: Ensure the lists are the same size to avoid index out of bounds
     for(i <- primes.indices){
-      val primeNumber: Int = primes.apply(i)
-      val primeSquared: Int = primesSquared.apply(i)
+      val primeNumber: Int = primes.apply(i) // can use apply or just () to access an element
+      val primeSquared: Int = primesSquared(i)
       println("index " + i + ": " + primeNumber + " squared is " + primeSquared)
     }
 

@@ -23,7 +23,7 @@ object MapExample {
     println("2: " + numberStrings)
 
 
-    // Oop, 3 should not map to "sixteen"
+    // Oops, 3 should not map to "sixteen"
     // Add the correct key-value pair
     numberStrings += (3 -> "three")
 

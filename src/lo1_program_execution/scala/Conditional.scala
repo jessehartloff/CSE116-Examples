@@ -6,7 +6,7 @@ object Conditional {
     val large: Double = 60.0
     val medium: Double = 30.0
     if (input >= large) {
-      "large"
+      "rge"
     } else if (input >= medium) {
       "medium"
     } else {
