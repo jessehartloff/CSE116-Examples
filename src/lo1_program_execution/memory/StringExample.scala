@@ -11,7 +11,7 @@ object StringExample {
   }
 
   def modify(input: String): String = {
-    var result = ""
+    var result: String = ""
     for(i <- 1 until input.length){
       result += input(i)
     }
