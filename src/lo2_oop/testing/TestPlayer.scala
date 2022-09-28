@@ -29,6 +29,9 @@ class TestPlayer extends FunSuite {
     // create player 2 who starts at location (7.0, -4.0) with 10 hp
     val player2: Player = new Player(7.0, -4.0, 10)
 
+    // player3 is assigned the reference of player1. They are the same player
+    val player3: Player = player1
+
     printPlayerLocation(player1)
     printPlayerLocation(player2)
 
