@@ -46,7 +46,7 @@ object MergeSort {
 
   def runMergeSort(n: Int): Unit = {
 
-    val numbers: List[Double] = (for (_ <- 0 to n) yield Math.random() - 0.5).toList
+    val numbers: List[Double] = (for (_ <- 0 until n) yield Math.random() - 0.5).toList
 
     val sortedNumbers = mergeSort(numbers)
 
