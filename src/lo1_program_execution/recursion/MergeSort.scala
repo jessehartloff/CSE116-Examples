@@ -55,7 +55,7 @@ object MergeSort {
 
 
   def main(args: Array[String]): Unit = {
-    runMergeSort(10)
+    runMergeSort(11)
   }
 
 }

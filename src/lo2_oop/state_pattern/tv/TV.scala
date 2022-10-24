@@ -4,7 +4,7 @@ import lo2_oop.state_pattern.tv.states._
 
 class TV {
 
-//  API: Volume up, volume down, mute, power
+//  API: Volume up, volume down, mute, power, currentVolume
 
   var volume = 5
   val maxVolume = 10
