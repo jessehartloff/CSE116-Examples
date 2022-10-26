@@ -9,9 +9,11 @@ object CustomSorting {
   }
 
   def distanceComparator(referencePoint: PhysicsVector): (PhysicsVector, PhysicsVector) => Boolean = {
-    (v1: PhysicsVector, v2: PhysicsVector) => {
+    val myFunction: (PhysicsVector, PhysicsVector) => Boolean = (v1: PhysicsVector, v2: PhysicsVector) => {
       distance(v1, referencePoint) < distance(v2, referencePoint)
     }
+    val returned: Boolean = myFunction(null, null)
+    myFunction
   }
 
   def example(n: Int): Unit = {

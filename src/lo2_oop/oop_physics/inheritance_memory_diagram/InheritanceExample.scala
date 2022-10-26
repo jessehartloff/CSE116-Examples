@@ -15,6 +15,6 @@ object InheritanceExample {
     println(ball.objectMass())
     println(potion2.objectMass())
     println(ball.toString())
-    println(potion1.toString())
+    println(potion1)
   }
 }
