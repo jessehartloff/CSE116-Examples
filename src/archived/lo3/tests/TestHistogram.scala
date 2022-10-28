@@ -1,6 +1,6 @@
-package live_coding.lo3.tests
+package archived.lo3.tests
 
-import live_coding.lo3.Histogram
+import archived.lo3.Histogram
 import org.scalatest._
 
 class TestHistogram extends FunSuite {

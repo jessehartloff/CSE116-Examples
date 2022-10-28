@@ -1,6 +1,6 @@
-package live_coding.lo3.tests
+package archived.lo3.tests
 
-import live_coding.lo3.{ArrayExamples, NumberGuesser}
+import archived.lo3.{ArrayExamples, NumberGuesser}
 import org.scalatest._
 
 class TestArrays extends FunSuite {
