@@ -22,14 +22,9 @@ object LinkedListExample {
     println(myList)
 
 
-    println(myList.apply(4).value)
+    println(myList.getValueAtIndex(4).value)
     println(myList.find(5).value)
     println(myList.findIterative(5).value)
-
-
-    val squareFunction = (x: Int) => x * x
-    val newList = myList.map(squareFunction)
-    println(newList)
 
 
 //    equipmentExample()
@@ -40,9 +35,5 @@ object LinkedListExample {
     var equipmentList = new LinkedListNode[Equipment](new GoldMines(), null)
     equipmentList = equipmentList.prepend(new Excavators())
     equipmentList = equipmentList.prepend(new Shovels())
-
-    val toCall = (equipment: Equipment) => equipment.buy()
-
-    equipmentList.forEach(toCall)
   }
 }

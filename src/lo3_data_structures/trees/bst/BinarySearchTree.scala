@@ -1,6 +1,8 @@
-package lo3_data_structures.trees
+package lo3_data_structures.trees.bst
 
-class BinarySearchTree[A](comparator: (A, A) => Boolean) {
+import lo3_data_structures.trees.BinaryTreeNode
+
+class BinarySearchTree[A](comparator: Comparator[A]) {
 
   var root: BinaryTreeNode[A] = null
 
@@ -13,7 +15,7 @@ class BinarySearchTree[A](comparator: (A, A) => Boolean) {
   }
 
   def insertHelper(a: A, node: BinaryTreeNode[A]): Unit = {
-    if(comparator(node.value, a)){
+    if(comparator.compare(node.value, a)){
       if(node.right == null){
         node.right = new BinaryTreeNode[A](a, null, null)
       }else{
@@ -35,9 +37,9 @@ class BinarySearchTree[A](comparator: (A, A) => Boolean) {
   def findHelper(a: A, node: BinaryTreeNode[A]): BinaryTreeNode[A] = {
     if(node == null){
       null
-    }else if(comparator(a, node.value)){
+    }else if(comparator.compare(a, node.value)){
       findHelper(a, node.left)
-    }else if(comparator(node.value, a)){
+    }else if(comparator.compare(node.value, a)){
       findHelper(a, node.right)
     }else{
       node

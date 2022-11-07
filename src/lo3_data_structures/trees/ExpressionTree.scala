@@ -52,7 +52,7 @@ object ExpressionTree {
 
 
     println("\n\nPostfix Notation:")
-    BinaryTreeTraversals.postOrderTraversal(root, (token: String) => print(token + " "))
+    BinaryTreeTraversals.postOrderTraversal(root)
   }
 
 

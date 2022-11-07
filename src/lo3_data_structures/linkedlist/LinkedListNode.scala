@@ -34,11 +34,11 @@ class LinkedListNode[A](var value: A, var next: LinkedListNode[A]) {
    *
    * Made to simulate array access notation
    */
-  def apply(i: Int): LinkedListNode[A] = {
+  def getValueAtIndex(i: Int): LinkedListNode[A] = {
     if (i == 0) {
       this
     } else {
-      this.next.apply(i - 1)
+      this.next.getValueAtIndex(i - 1)
     }
   }
 
@@ -83,29 +83,6 @@ class LinkedListNode[A](var value: A, var next: LinkedListNode[A]) {
       node = node.next
     }
     null
-  }
-
-
-  /**
-   * returns the head of a new linked list containing f(element) for each element in the original list
-   */
-  def map[B](f: A => B): LinkedListNode[B] = {
-    val newValue = f(this.value)
-    if (this.next == null) {
-      new LinkedListNode[B](newValue, null)
-    } else {
-      new LinkedListNode[B](newValue, this.next.map(f))
-    }
-  }
-
-  /**
-   * calls the provided function on every element in the list
-   */
-  def forEach(f: A => Unit): Unit = {
-    f(this.value)
-    if (this.next != null) {
-      this.next.forEach(f)
-    }
   }
 
 

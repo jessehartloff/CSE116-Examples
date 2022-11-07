@@ -2,27 +2,27 @@ package lo3_data_structures.trees
 
 object BinaryTreeTraversals {
 
-  def inOrderTraversal[A](node: BinaryTreeNode[A], f: A => Unit): Unit = {
+  def inOrderTraversal[A](node: BinaryTreeNode[A]): Unit = {
     if(node != null) {
-      inOrderTraversal(node.left, f)
-      f(node.value)
-      inOrderTraversal(node.right, f)
+      inOrderTraversal(node.left)
+      println(node.value)
+      inOrderTraversal(node.right)
     }
   }
 
-  def preOrderTraversal[A](node: BinaryTreeNode[A], f: A => Unit): Unit = {
+  def preOrderTraversal[A](node: BinaryTreeNode[A]): Unit = {
     if(node != null) {
-      f(node.value)
-      preOrderTraversal(node.left, f)
-      preOrderTraversal(node.right, f)
+      println(node.value)
+      preOrderTraversal(node.left)
+      preOrderTraversal(node.right)
     }
   }
 
-  def postOrderTraversal[A](node: BinaryTreeNode[A], f: A => Unit): Unit = {
+  def postOrderTraversal[A](node: BinaryTreeNode[A]): Unit = {
     if(node != null) {
-      postOrderTraversal(node.left, f)
-      postOrderTraversal(node.right, f)
-      f(node.value)
+      postOrderTraversal(node.left)
+      postOrderTraversal(node.right)
+      println(node.value)
     }
   }
 
@@ -38,13 +38,13 @@ object BinaryTreeTraversals {
     root.right.right = new BinaryTreeNode[Int](14, null, null)
 
     println("In-order Traversal:")
-    inOrderTraversal(root, println)
+    inOrderTraversal(root)
 
     println("\nPre-order Traversal:")
-    preOrderTraversal(root, println)
+    preOrderTraversal(root)
 
     println("\nPost-order Traversal:")
-    postOrderTraversal(root, println)
+    postOrderTraversal(root)
   }
 
   def main(args: Array[String]): Unit = {
