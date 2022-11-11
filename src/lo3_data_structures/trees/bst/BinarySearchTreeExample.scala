@@ -17,7 +17,6 @@ object BinarySearchTreeExample {
 
 
   def example2(): Unit = {
-    val intLessThan: (Int, Int) => Boolean = (a: Int, b: Int) => a < b
     val bst = new BinarySearchTree[Int](new LessThanComparator())
     bst.insert(-3)
     bst.insert(2)
