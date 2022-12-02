@@ -13,11 +13,12 @@ object MemoryDiagramExample {
   }
 
   def main(args: Array[String]): Unit = {
-    val root = new BTNode("life", null, null)
-    root.left = new BTNode("Scala", null, null)
-    root.right = new BTNode("for", null, null)
-    root.right.left = new BTNode("coding", null, null)
+    val root = new BTNode("day", null, null)
+    root.left = new BTNode("have", null, null)
+    root.right = new BTNode("great", null, null)
+    root.right.left = new BTNode("a", null, null)
     traversal(root)
   }
 
 }
+
